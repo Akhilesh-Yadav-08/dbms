@@ -90,7 +90,7 @@ export const ThreeTrophyCanvas: React.FC<ThreeTrophyCanvasProps> = ({
       scene.fog = new THREE.FogExp2(0x080b11, 0.045);
       if (keySpot) keySpot.intensity = 8.5;
       if (rimLight) {
-        rimLight.color.setHex(0x38bdf8);
+        rimLight.color.setHex(0xffbd4a);
         rimLight.intensity = 4.0;
       }
       if (hemiLight) {
@@ -108,7 +108,7 @@ export const ThreeTrophyCanvas: React.FC<ThreeTrophyCanvasProps> = ({
       scene.fog = new THREE.FogExp2(0xf8fafc, 0.035);
       if (keySpot) keySpot.intensity = 7.0;
       if (rimLight) {
-        rimLight.color.setHex(0x93c5fd);
+        rimLight.color.setHex(0xffd785);
         rimLight.intensity = 3.2;
       }
       if (hemiLight) {
@@ -181,6 +181,9 @@ export const ThreeTrophyCanvas: React.FC<ThreeTrophyCanvasProps> = ({
     renderer.toneMappingExposure = 1.25;
     renderer.shadowMap.enabled = !isSoftwareGl;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.domElement.style.maskImage = 'radial-gradient(ellipse 78% 72% at 50% 50%, black 48%, transparent 100%)';
+    renderer.domElement.style.webkitMaskImage = 'radial-gradient(ellipse 78% 72% at 50% 50%, black 48%, transparent 100%)';
+    renderer.domElement.style.background = 'transparent';
 
     container.appendChild(renderer.domElement);
 
@@ -637,11 +640,7 @@ export const ThreeTrophyCanvas: React.FC<ThreeTrophyCanvasProps> = ({
 
   return (
     <div
-      className={`relative rounded-3xl overflow-hidden border shadow-2xl flex flex-col justify-between group transition-colors duration-500 ${
-        isDark
-          ? 'bg-radial from-slate-900/90 via-slate-950 to-black border-amber-500/35 shadow-black/80'
-          : 'bg-radial from-white via-slate-100 to-slate-200 border-slate-300 shadow-xl'
-      } ${className}`}
+      className={`relative overflow-visible group ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
         setIsHovered(false);
@@ -650,7 +649,7 @@ export const ThreeTrophyCanvas: React.FC<ThreeTrophyCanvasProps> = ({
       }}
     >
       {/* Top Telemetry Overlay */}
-      <div className="absolute top-4 left-4 right-4 z-20 flex items-center justify-between pointer-events-none">
+      <div className="hidden absolute top-4 left-4 right-4 z-20 items-center justify-between pointer-events-none">
         <div
           className={`flex items-center gap-2 px-3 py-1.5 rounded-full backdrop-blur-md border shadow-lg ${
             isDark
@@ -705,11 +704,11 @@ export const ThreeTrophyCanvas: React.FC<ThreeTrophyCanvasProps> = ({
       {/* 3D WebGL Canvas Viewport with Touch/Mouse Interaction */}
       <div
         ref={mountRef}
-        className="relative w-full h-80 sm:h-96 cursor-grab active:cursor-grabbing"
+        className="relative w-full h-[24rem] sm:h-[31rem] cursor-grab active:cursor-grabbing"
       />
 
       {/* Interaction Hint */}
-      <div className="absolute inset-x-0 bottom-16 flex justify-center pointer-events-none">
+      <div className="hidden absolute inset-x-0 bottom-16 justify-center pointer-events-none">
         <span
           className={`text-[11px] font-mono font-semibold px-3 py-1 rounded-full border backdrop-blur-md transition-opacity duration-300 ${
             isHovered ? 'opacity-100' : 'opacity-70'
@@ -725,7 +724,8 @@ export const ThreeTrophyCanvas: React.FC<ThreeTrophyCanvasProps> = ({
 
       {/* Bottom Precision Rotation & Angle Control Dock */}
       <div
-        className={`relative z-20 px-4 py-3 backdrop-blur-md border-t flex flex-wrap items-center justify-between gap-3 ${
+        aria-hidden="true"
+        className={`hidden relative z-20 px-4 py-3 backdrop-blur-md border-t flex-wrap items-center justify-between gap-3 ${
           isDark
             ? 'bg-slate-950/90 border-slate-800/80'
             : 'bg-white/90 border-slate-200'

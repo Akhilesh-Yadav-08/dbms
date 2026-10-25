@@ -28,7 +28,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, onSelectTab, onReset
     <header
       className={`sticky top-0 z-40 backdrop-blur-2xl border-b transition-colors duration-500 ${
         isDark
-          ? 'bg-slate-950/85 border-amber-500/20 shadow-2xl shadow-black/70'
+          ? 'bg-[#05080d]/68 border-white/10 shadow-none'
           : 'bg-white/85 border-slate-200 shadow-md shadow-slate-200/50'
       }`}
     >
@@ -45,7 +45,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, onSelectTab, onReset
         <nav
           className={`hidden xl:flex items-center gap-1 p-1.5 rounded-2xl border transition-colors ${
             isDark
-              ? 'bg-slate-900/90 border-slate-800/90'
+            ? 'bg-transparent border-white/10'
               : 'bg-slate-100/90 border-slate-200'
           }`}
         >
@@ -60,14 +60,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, onSelectTab, onReset
                   isActive
                     ? 'text-slate-950 font-black'
                     : isDark
-                    ? 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+                    ? 'text-slate-400 hover:text-white hover:bg-white/[0.05]'
                     : 'text-slate-600 hover:text-slate-950 hover:bg-white/80'
                 }`}
               >
                 {isActive && (
                   <motion.div
                     layoutId="navbarActiveTab"
-                    className="absolute inset-0 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 rounded-xl shadow-md shadow-amber-500/20"
+                    className="absolute inset-0 bg-gradient-to-r from-amber-300 via-yellow-400 to-amber-500 rounded-xl shadow-[0_8px_25px_-16px_rgba(251,191,36,.9)]"
                     transition={{ type: 'spring', stiffness: 350, damping: 30 }}
                   />
                 )}

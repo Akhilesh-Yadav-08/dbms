@@ -41,12 +41,12 @@ export const StarfieldCanvas: React.FC = () => {
       canvas.style.height = `${height}px`;
       context.setTransform(scale, 0, 0, scale, 0, 0);
 
-      const count = Math.min(190, Math.max(85, Math.round((width * height) / 12500)));
+      const count = Math.min(155, Math.max(70, Math.round((width * height) / 16000)));
       stars = Array.from({ length: count }, () => ({
         x: random() * width,
         y: random() * height,
-        radius: random() > 0.84 ? random() * 1.25 + 1.1 : random() * 0.8 + 0.3,
-        opacity: random() * 0.48 + 0.4,
+        radius: random() > 0.87 ? random() * 1.2 + 1.05 : random() * 0.62 + 0.22,
+        opacity: random() * 0.46 + 0.34,
         phase: random() * Math.PI * 2,
         speed: random() * 0.7 + 0.25,
       }));
@@ -56,19 +56,31 @@ export const StarfieldCanvas: React.FC = () => {
       context.clearRect(0, 0, width, height);
       if (!isDark) return;
 
+      // Sparse amber particles and a warm pool mirror the provided trophy scene.
+      const drift = reducedMotion ? 0.5 : (Math.sin(time * 0.00013) + 1) / 2;
+      const pool = context.createRadialGradient(
+        width * (0.32 + drift * 0.36), height * 0.26, 0,
+        width * (0.32 + drift * 0.36), height * 0.26, Math.max(width, height) * 0.42
+      );
+      pool.addColorStop(0, 'rgba(255, 184, 42, 0.075)');
+      pool.addColorStop(0.42, 'rgba(210, 129, 12, 0.025)');
+      pool.addColorStop(1, 'rgba(210, 129, 12, 0)');
+      context.fillStyle = pool;
+      context.fillRect(0, 0, width, height);
+
       for (const star of stars) {
         const shimmer = reducedMotion ? 1 : 0.72 + Math.sin(time * 0.0012 * star.speed + star.phase) * 0.28;
         const alpha = star.opacity * shimmer;
         if (star.radius > 1) {
           const glow = context.createRadialGradient(star.x, star.y, 0, star.x, star.y, star.radius * 5);
-          glow.addColorStop(0, `rgba(255, 255, 255, ${alpha})`);
-          glow.addColorStop(0.18, `rgba(224, 240, 255, ${alpha * 0.65})`);
-          glow.addColorStop(1, 'rgba(190, 220, 255, 0)');
+          glow.addColorStop(0, `rgba(255, 232, 128, ${alpha})`);
+          glow.addColorStop(0.18, `rgba(255, 190, 42, ${alpha * 0.65})`);
+          glow.addColorStop(1, 'rgba(255, 170, 20, 0)');
           context.fillStyle = glow;
           context.fillRect(star.x - star.radius * 5, star.y - star.radius * 5, star.radius * 10, star.radius * 10);
         }
         context.beginPath();
-        context.fillStyle = `rgba(255, 255, 255, ${alpha})`;
+        context.fillStyle = `rgba(255, 222, 102, ${alpha})`;
         context.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
         context.fill();
       }

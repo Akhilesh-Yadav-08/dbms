@@ -48,14 +48,6 @@ export const FullBackgroundCricketerShowcase: React.FC<
     setTimeout(() => setCopiedQuery(false), 2500);
   };
 
-  // Determine campaign photography asset based on role category
-  const getCampaignImage = (category: string) => {
-    if (category === 'bowling') {
-      return '/src/assets/images/legend_bowler_portrait_1792915411443.jpg';
-    }
-    return '/src/assets/images/legend_batsman_portrait_1792915382348.jpg';
-  };
-
   return (
     <div className="relative min-h-[92vh] flex flex-col justify-between p-4 sm:p-8 lg:p-12 overflow-hidden select-none z-10">
       {/* Directional Atmosphere Glow matching player brand accent */}
@@ -150,7 +142,7 @@ export const FullBackgroundCricketerShowcase: React.FC<
             >
               <div className="relative aspect-[3/4] overflow-hidden">
                 <img
-                  src={getCampaignImage(currentGoat.category)}
+                  src={currentGoat.photo}
                   alt={currentGoat.name}
                   className="w-full h-full object-cover object-top filter contrast-[1.08] saturate-[1.1] transition-transform duration-700 hover:scale-105"
                   loading="eager"

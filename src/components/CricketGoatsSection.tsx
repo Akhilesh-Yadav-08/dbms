@@ -20,6 +20,7 @@ export interface CricketGoat {
   signatureShot: string;
   avatarColor: string;
   accentColor: string;
+  photo: string;
   bio: string;
   legendaryFeats: string[];
   dbmsComparisonQuery: string;
@@ -43,6 +44,7 @@ export const CRICKET_GOATS: CricketGoat[] = [
     signatureShot: 'Pinpoint Straight Drive',
     avatarColor: 'from-blue-600 via-indigo-700 to-amber-500',
     accentColor: 'border-blue-500/40 text-blue-400',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/2/25/Sachin_Tendulkar_at_MRF_Promotion_Event.jpg',
     bio: 'Widely celebrated as the greatest batsman in cricket history. The only player to score 100 international centuries, playing at elite international level for 24 years.',
     legendaryFeats: [
       'First batsman in history to score an ODI Double Century (200* vs South Africa, 2010)',
@@ -74,6 +76,7 @@ ORDER BY total_runs DESC;`,
     signatureShot: 'Swaggering Hook (No Helmet)',
     avatarColor: 'from-rose-700 via-amber-700 to-yellow-500',
     accentColor: 'border-rose-500/40 text-rose-400',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/3/3c/Vivian_richards_crop.jpg',
     bio: 'Redefined batting fearlessness. Batted with nonchalant swagger without a helmet against the fastest bowlers, boasting a 90+ strike rate when global averages hovered at 65.',
     legendaryFeats: [
       '189* vs England at Old Trafford (1984), arguably the greatest ODI innings ever played',
@@ -105,6 +108,7 @@ ORDER BY strike_rate DESC;`,
     signatureShot: 'Signature Whip Cover Drive',
     avatarColor: 'from-amber-600 via-yellow-600 to-emerald-600',
     accentColor: 'border-amber-500/40 text-amber-400',
+    photo: 'https://commons.wikimedia.org/wiki/Special:FilePath/Virat%20Kohli%20portrait.jpg?width=1200',
     bio: 'The undisputed modern chase maestro. Smashed Sachin Tendulkar’s record with 50 ODI hundreds, boasting unmatched consistency in pressure run chases.',
     legendaryFeats: [
       'Most centuries in ODI cricket history (50 centuries, surpassing Sachin in 2023)',
@@ -138,6 +142,7 @@ ORDER BY total_runs DESC;`,
     signatureShot: 'Fierce Spinning Leg-Break',
     avatarColor: 'from-yellow-600 via-amber-600 to-emerald-700',
     accentColor: 'border-yellow-500/40 text-yellow-400',
+    photo: 'https://commons.wikimedia.org/wiki/Special:FilePath/Shane%20Warne%20February%202015.jpg?width=1200',
     bio: 'Revived the dying art of leg-spin bowling. Bowled the iconic "Ball of the Century" to Mike Gatting in 1993 and captained Rajasthan Royals to the inaugural IPL championship.',
     legendaryFeats: [
       'Delivered the "Ball of the Century" pitching outside leg and clipping top of off-stump',
@@ -170,6 +175,7 @@ ORDER BY total_wickets DESC;`,
     signatureShot: 'Helicopter Shot',
     avatarColor: 'from-emerald-600 via-teal-700 to-amber-500',
     accentColor: 'border-emerald-500/40 text-emerald-400',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/The_President%2C_Shri_Ram_Nath_Kovind_presenting_the_Padma_Bhushan_Award_to_Shri_M.S._Dhoni%2C_at_the_Civil_Investiture_Ceremony-II%2C_at_Rashtrapati_Bhavan%2C_in_New_Delhi_on_April_02%2C_2018.jpg',
     bio: 'The only captain in international cricket history to win all three ICC white-ball trophies: 2007 T20 World Cup, 2011 ODI World Cup, and 2013 Champions Trophy.',
     legendaryFeats: [
       'Finished the 2011 ICC World Cup Final with an iconic six at Wankhede Stadium (91* off 79 balls)',
@@ -201,6 +207,7 @@ ORDER BY m.match_date DESC;`,
     signatureShot: 'Lethal Reverse-Swing Yorker',
     avatarColor: 'from-teal-600 via-emerald-800 to-green-950',
     accentColor: 'border-teal-500/40 text-teal-400',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/f/f4/Wasim-akram-gesf-2018-7878.jpg',
     bio: 'The undisputed master of reverse swing. Left-arm fast bowler who could swing the ball both ways at lethal speeds, inspiring generations of pace bowlers worldwide.',
     legendaryFeats: [
       'Twin magic balls in the 1992 World Cup Final dismissing Allan Lamb and Chris Lewis in consecutive balls',
@@ -232,6 +239,7 @@ ORDER BY wickets DESC;`,
     signatureShot: 'Flamboyant High-Backlift Cover Drive',
     avatarColor: 'from-amber-700 via-red-800 to-purple-900',
     accentColor: 'border-amber-500/40 text-amber-400',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Brian_Lara_Portrait.jpg',
     bio: 'A batting virtuoso known for legendary marathon innings. Holds the all-time world records for the highest individual score in both Test cricket (400*) and first-class cricket (501*).',
     legendaryFeats: [
       'Scored 400 not out vs England at Antigua in 2004 — the only quadruple century in Test history',
@@ -262,6 +270,7 @@ ORDER BY peak_innings DESC;`,
     signatureShot: 'Toe-Crushing Hyperextended Yorker',
     avatarColor: 'from-sky-600 via-blue-800 to-indigo-950',
     accentColor: 'border-sky-500/40 text-sky-400',
+    photo: 'https://upload.wikimedia.org/wikipedia/commons/0/02/Jasprit_Bumrah_in_PMO_New_Delhi.jpg',
     bio: 'The most lethal all-format bowler of modern cricket. Possesses an extraordinary bowling average under 20 in Test cricket and delivered the clutch final over to seal the 2024 T20 World Cup.',
     legendaryFeats: [
       'Player of the Tournament at the 2024 ICC T20 World Cup with 15 wickets at an economy of 4.17',
@@ -393,12 +402,8 @@ export const CricketGoatsSection: React.FC = () => {
 
               {/* Player Avatar Emblem */}
               <div className="flex items-center gap-3 my-3">
-                <div
-                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${goat.avatarColor} p-0.5 shadow-md flex items-center justify-center shrink-0 border border-white/20`}
-                >
-                  <div className="w-full h-full rounded-[10px] bg-slate-950 flex items-center justify-center font-black text-sm text-white tracking-wider">
-                    {goat.countryCode}
-                  </div>
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-200 via-amber-500 to-amber-950 p-px shadow-md shrink-0 overflow-hidden">
+                  <img src={goat.photo} alt={goat.name} className="w-full h-full object-cover" onError={(event) => { event.currentTarget.style.display = 'none'; }} />
                 </div>
 
                 <div>
@@ -514,12 +519,8 @@ export const CricketGoatsSection: React.FC = () => {
                 }`}
               >
                 <div className="flex items-center gap-4">
-                  <div
-                    className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${selectedGoat.avatarColor} p-1 shadow-xl flex items-center justify-center shrink-0 border border-white/20`}
-                  >
-                    <div className="w-full h-full rounded-xl bg-slate-950 flex items-center justify-center font-black text-lg text-amber-400">
-                      {selectedGoat.countryCode}
-                    </div>
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-200 via-amber-500 to-amber-950 p-px shadow-xl shrink-0 overflow-hidden">
+                    <img src={selectedGoat.photo} alt={selectedGoat.name} className="w-full h-full object-cover" onError={(event) => { event.currentTarget.style.display = 'none'; }} />
                   </div>
 
                   <div>

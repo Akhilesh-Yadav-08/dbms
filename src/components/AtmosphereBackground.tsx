@@ -8,24 +8,24 @@ export const AtmosphereBackground: React.FC = () => {
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden transition-all duration-700 select-none">
       {isDark ? (
         // DARK THEME: Deep Obsidian / Charcoal Foundation with Stadium Floodlights & Cinematic Mist
-        <div className="absolute inset-0 bg-[#07090e]">
+        <div className="absolute inset-0 bg-[#020202]">
           {/* Subtle dusk stadium silhouette overlay */}
           <div
-            className="absolute inset-0 bg-cover bg-bottom bg-no-repeat opacity-25 mix-blend-screen transition-opacity duration-700"
+            className="hidden absolute inset-0 bg-cover bg-bottom bg-no-repeat opacity-[0.12] mix-blend-screen transition-opacity duration-700"
             style={{
               backgroundImage: 'url(/src/assets/images/stadium_championship_night_1792915349132.jpg)',
             }}
           />
 
           {/* Deep charcoal radial gradients */}
-          <div className="absolute inset-0 bg-radial from-slate-900/40 via-[#07090e]/80 to-[#07090e]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_48%_35%_at_50%_38%,rgba(134,77,8,.20),transparent_70%),radial-gradient(ellipse_28%_18%_at_50%_78%,rgba(244,171,29,.14),transparent_76%),linear-gradient(180deg,#020202_0%,#060300_48%,#000000_100%)]" />
 
           {/* Subtle gold spotlight in upper center for trophy rim illumination */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-radial from-amber-500/10 via-amber-500/5 to-transparent rounded-full filter blur-[140px]" />
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[720px] h-[520px] bg-radial from-amber-400/[0.13] via-amber-600/[0.045] to-transparent rounded-full filter blur-[110px] animate-[pulse_9s_ease-in-out_infinite]" />
 
           {/* Dual Stadium Floodlight Beams (Left & Right) */}
-          <div className="absolute top-0 left-1/6 w-96 h-96 bg-cyan-500/5 rounded-full filter blur-[100px]" />
-          <div className="absolute top-0 right-1/6 w-96 h-96 bg-amber-500/5 rounded-full filter blur-[100px]" />
+          <div className="absolute top-0 left-1/6 w-96 h-96 bg-amber-300/[0.025] rounded-full filter blur-[100px] animate-[pulse_11s_ease-in-out_infinite]" />
+          <div className="absolute top-0 right-1/6 w-96 h-96 bg-amber-500/[0.03] rounded-full filter blur-[100px] animate-[pulse_13s_ease-in-out_infinite]" />
 
           {/* Stars are rendered by the standalone StarfieldCanvas above this layer.
               It is intentionally not part of the trophy's WebGL renderer. */}
