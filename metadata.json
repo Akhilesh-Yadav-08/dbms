@@ -1,0 +1,6 @@
+{
+  "name": "Cricket Score Management System",
+  "description": "Full-stack College DBMS Project managing cricket teams, players, matches, scores, and performances using a relational SQLite database with interactive SQL Playground and academic viva documentation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

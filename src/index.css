@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Inter', 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: transparent;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  code, kbd, samp, pre {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
+
+/* Shared cinematic treatment for every functional view. It adds a quieter,
+   editorial stage without changing the existing data or interactions. */
+.site-content > div {
+  isolation: isolate;
+}
+
+html.dark .site-content :is(h1, h2, h3) {
+  letter-spacing: -0.035em;
+}
+
+html.dark .site-content [class*="rounded-3xl"] {
+  border-color: rgba(224, 177, 81, 0.16);
+  box-shadow: 0 28px 64px -38px rgba(0, 0, 0, 0.9);
+}
+
+html.dark .site-content [class*="bg-slate-950"] {
+  background-color: rgba(7, 12, 20, 0.78);
+}
+
+html.dark .site-content [class*="bg-slate-900"] {
+  background-color: rgba(14, 23, 35, 0.72);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+}
+
+html.light body {
+  color: #0f172a;
+}
+
+html.dark body {
+  color: #f1f5f9;
+}
+
+/* Custom sports dashboard scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(245, 158, 11, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(245, 158, 11, 0.6);
+}
