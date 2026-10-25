@@ -248,7 +248,7 @@ export const TeamsView: React.FC<TeamsViewProps> = ({
                   <Users className="w-3.5 h-3.5" />
                   <span>View Roster</span>
                 </button>
-                <span className="text-[11px] font-mono text-slate-400">DBMS Primary Key</span>
+                <span className="text-[11px] font-mono text-slate-400">Official squad</span>
               </div>
             </motion.div>
           ))}
@@ -269,7 +269,7 @@ export const TeamsView: React.FC<TeamsViewProps> = ({
               {editingTeam ? 'Edit Team Details' : 'Register New National Team'}
             </h2>
             <p className="text-xs text-slate-500 mt-1">
-              {editingTeam ? 'Update record in the Team SQL entity' : 'INSERT INTO Team (team_name, country)'}
+              {editingTeam ? 'Update squad details' : 'Register a national squad'}
             </p>
 
             {errorMsg && (
@@ -349,7 +349,7 @@ export const TeamsView: React.FC<TeamsViewProps> = ({
             </div>
             <p className="text-xs text-slate-500 leading-relaxed">
               Are you sure you want to delete <strong className={isDark ? 'text-white' : 'text-slate-900'}>{deletingTeam.team_name}</strong>?
-              Foreign key constraints will also cascade delete all associated players and scores.
+              Associated players, fixtures, and score records will also be removed.
             </p>
             <div className="flex items-center justify-end gap-2 pt-2">
               <button

@@ -320,7 +320,7 @@ export const CricketGoatsSection: React.FC = () => {
               isDark ? 'text-slate-400' : 'text-slate-600'
             }`}
           >
-            Explore immortal cricket titans who set the global career benchmarks our tournament athletes strive to reach in the SQLite database.
+            Explore the players whose defining moments changed the game forever.
           </p>
         </div>
 
@@ -684,11 +684,11 @@ export const CricketGoatsSection: React.FC = () => {
                   <Zap className="w-5 h-5 text-amber-500 fill-amber-500" />
                 </div>
 
-                {/* DBMS Connection Query */}
+                {/* Player data detail */}
                 <div className="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs font-mono space-y-2 text-white">
                   <div className="text-[11px] text-amber-400 font-bold uppercase tracking-wider flex items-center gap-1.5">
                     <Activity className="w-3.5 h-3.5 text-amber-400" />
-                    <span>Relational SQL Comparison Query</span>
+                    <span>Career data detail</span>
                   </div>
                   <pre className="text-[11px] text-emerald-400 overflow-x-auto whitespace-pre-wrap leading-relaxed">
                     {selectedGoat.dbmsComparisonQuery}

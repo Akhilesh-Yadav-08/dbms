@@ -359,7 +359,7 @@ export const FullBackgroundCricketerShowcase: React.FC<
               <div className="flex items-center justify-between pb-2 mb-2 border-b border-slate-800 text-xs font-mono">
                 <div className="flex items-center gap-2 text-amber-400 font-bold">
                   <Database className="w-3.5 h-3.5" />
-                  <span>3NF Relational Benchmark Query</span>
+                  <span>Career data notes</span>
                 </div>
                 <button
                   onClick={handleCopyQuery}

@@ -1,5 +1,4 @@
 import express, { Request, Response } from 'express';
-import { createServer as createViteServer } from 'vite';
 import path from 'path';
 import { db, seedSampleData } from './server/db.ts';
 
@@ -983,9 +982,13 @@ app.post('/api/reset', (_req: Request, res: Response) => {
 // VITE DEV SERVER / PRODUCTION STATIC SERVE
 // ==========================================
 async function startServer() {
-  const isProd = process.env.NODE_ENV === 'production';
+  const useFallbackStatic = process.env.USE_FALLBACK_STATIC === 'true';
+  const isProd = process.env.NODE_ENV === 'production' || useFallbackStatic;
 
   if (!isProd) {
+    // Imported lazily so the Express + SQLite backend can still run on systems
+    // where a Vite native binding is blocked by local Windows policy.
+    const { createServer: createViteServer } = await import('vite');
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: 'spa',

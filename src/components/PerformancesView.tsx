@@ -436,7 +436,7 @@ export const PerformancesView: React.FC<PerformancesViewProps> = ({
           </div>
 
           <div className="p-4 border-t border-slate-800 bg-slate-950/60 text-[11px] text-slate-400 font-mono">
-            DBMS Note: Demonstrates many-to-many relationship between Match and Player resolved via the Performance junction entity.
+            Player performance records are linked to each match for a complete tournament view.
           </div>
         </div>
       </div>

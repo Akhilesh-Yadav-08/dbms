@@ -21,7 +21,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, onSelectTab, onReset
     { id: 'matches', label: 'Matches' },
     { id: 'scores', label: 'Live Scoring', isLive: true },
     { id: 'performances', label: 'Performances' },
-    { id: 'viva', label: 'SQL & Schema', icon: Database },
+    { id: 'viva', label: 'Data Studio', icon: Database },
   ];
 
   return (
@@ -106,7 +106,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentTab, onSelectTab, onReset
           {/* Reset Database Button */}
           <button
             onClick={onResetDb}
-            title="Reset to benchmark sample dataset"
+            title="Restore match data"
             className={`group inline-flex items-center gap-2 px-3.5 py-2 text-xs font-bold uppercase tracking-wider rounded-xl transition-all cursor-pointer shadow-sm border ${
               isDark
                 ? 'bg-slate-900 hover:bg-slate-800 text-slate-200 border-slate-700/80 hover:border-amber-500/40'

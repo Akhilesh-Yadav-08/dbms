@@ -608,7 +608,7 @@ export const ScoresView: React.FC<ScoresViewProps> = ({
           </div>
 
           <div className="p-4 border-t border-slate-800 bg-slate-950/80 text-[11px] text-slate-500 font-mono">
-            DBMS Note: Score rows are bound to both Match and Team foreign keys with ON DELETE CASCADE.
+            Every scorecard is linked to its fixture and competing squad for accurate live coverage.
           </div>
         </div>
       </div>

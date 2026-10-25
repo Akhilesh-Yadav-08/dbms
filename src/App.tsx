@@ -69,7 +69,7 @@ function AppContent() {
       await api.resetDatabase();
       await fetchGlobalData();
       setIsResetConfirmOpen(false);
-      showToast('Database reset successfully to academic sample benchmark data.');
+      showToast('Match data restored successfully.');
     } catch (err: any) {
       alert(`Reset failed: ${err.message}`);
     } finally {
@@ -225,12 +225,12 @@ function AppContent() {
               </div>
               <div>
                 <h3 className="text-base font-black">Reset Sample Database?</h3>
-                <p className="text-xs text-amber-500 font-mono">Academic DBMS Demonstration</p>
+                <p className="text-xs text-amber-500 font-mono">Restore tournament data</p>
               </div>
             </div>
 
             <p className="text-xs leading-relaxed opacity-80">
-              This will re-initialize all 5 relational tables (<code className="font-mono text-amber-500 font-bold">Team, Player, Match, Score, Performance</code>) with the verified international cricket benchmark dataset (6 national teams, 36+ players, 5 fixtures, and complete scorecards).
+              This will restore the original squads, fixtures, scorecards, and player performances for the current tournament.
             </p>
 
             <div className="flex items-center justify-end gap-2 pt-2">

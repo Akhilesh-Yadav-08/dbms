@@ -44,7 +44,7 @@ export const ChampionshipHero: React.FC<ChampionshipHeroProps> = ({
         </span>
         <span className={isDark ? 'text-slate-600' : 'text-slate-400'}>·</span>
         <span className={isDark ? 'text-slate-300' : 'text-slate-700'}>
-          Relational 3NF DBMS Platform
+          The world game, in focus
         </span>
       </motion.div>
 
@@ -72,7 +72,7 @@ export const ChampionshipHero: React.FC<ChampionshipHeroProps> = ({
               isDark ? 'text-slate-300' : 'text-slate-700'
             }`}
           >
-            Broadcast-grade live scoring, player career metrics, and interactive relational schema queries powered by normalized SQLite.
+            Live scoring, landmark performances, and the stories that define the modern game.
           </p>
         </motion.div>
 
@@ -141,7 +141,7 @@ export const ChampionshipHero: React.FC<ChampionshipHeroProps> = ({
             <span>Legends & GOATs Showcase</span>
           </button>
 
-          {/* Tertiary Action: SQL & Schema Hub */}
+          {/* Tertiary Action: Data Studio */}
           <button
             onClick={() => onNavigate('viva')}
             className={`px-5 py-3.5 rounded-2xl font-bold text-xs uppercase tracking-wider border shadow-xl flex items-center gap-2 cursor-pointer transition-all hover:scale-105 active:scale-95 ${
@@ -151,7 +151,7 @@ export const ChampionshipHero: React.FC<ChampionshipHeroProps> = ({
             }`}
           >
             <Database className="w-4 h-4 text-amber-500" />
-            <span>SQL Viva & Schema Hub</span>
+            <span>Open Data Studio</span>
           </button>
         </motion.div>
 
@@ -173,7 +173,7 @@ export const ChampionshipHero: React.FC<ChampionshipHeroProps> = ({
           <span aria-hidden="true">·</span>
           <span className="flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5 text-amber-500" />
-            <span>5 Relational Tables in 3NF</span>
+            <span>Live tournament intelligence</span>
           </span>
         </div>
       </div>

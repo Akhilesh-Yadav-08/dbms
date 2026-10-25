@@ -120,7 +120,7 @@ export const ChampionshipTrophy3D: React.FC<ChampionshipTrophy3DProps> = ({
 
             <div className="flex items-center gap-1 px-2.5 py-1 rounded-md bg-emerald-950/80 border border-emerald-500/30 text-emerald-400 text-[10px] font-mono font-semibold">
               <ShieldCheck className="w-3 h-3 text-emerald-400" />
-              <span>DBMS Tier 1</span>
+              <span>Championship Edition</span>
             </div>
           </div>
 

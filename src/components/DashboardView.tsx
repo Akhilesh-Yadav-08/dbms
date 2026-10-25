@@ -224,7 +224,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 isDark ? 'text-slate-300' : 'text-slate-600'
               }`}
             >
-              Experience Sachin, Virat, Dhoni, Vivian Richards, and Warne with full-bleed cinematic atmospheres, signature shot reels, and relational SQLite benchmark comparisons.
+              Explore the players and moments that shaped cricket, presented with full-bleed campaign atmosphere and signature highlights.
             </p>
           </div>
 
@@ -270,7 +270,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     Leading Run Scorers
                   </h2>
                   <p className="text-[11px] text-slate-400 font-mono">
-                    SQL: SUM(runs_scored) & GROUP BY
+                    Tournament leaders
                   </p>
                 </div>
               </div>
@@ -362,7 +362,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                     Leading Wicket Takers
                   </h2>
                   <p className="text-[11px] text-slate-400 font-mono">
-                    SQL: SUM(wickets_taken) & GROUP BY
+                    Tournament leaders
                   </p>
                 </div>
               </div>
@@ -441,7 +441,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 Recent Match Center
               </h2>
               <p className="text-xs text-slate-400 font-mono">
-                Dual INNER JOIN query connecting Match, Teams, and Innings Scores
+                Latest results, scorecards, and match stories
               </p>
             </div>
             <button

@@ -28,9 +28,6 @@ export const CricketBrandLogo: React.FC = () => {
           >
             CRICKET
           </span>
-          <span className="px-1.5 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-950 shadow-sm">
-            DBMS
-          </span>
         </div>
 
         <div className="flex items-center gap-1.5 mt-1">
@@ -40,7 +37,7 @@ export const CricketBrandLogo: React.FC = () => {
               isDark ? 'text-slate-400' : 'text-slate-600'
             }`}
           >
-            Championship Score Engine
+            Championship Live Centre
           </span>
         </div>
       </div>
